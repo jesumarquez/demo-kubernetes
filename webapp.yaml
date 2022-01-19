@@ -1,3 +1,4 @@
+#https://youtu.be/s_o8dwzRlu4
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,9 +33,9 @@ spec:
               key: mongo-password        
         - name: DB_URL
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               name: mongo-config
-              key: monog-url
+              key: mongo-url
 ---
 apiVersion: v1
 kind: Service
